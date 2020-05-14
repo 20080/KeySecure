@@ -1,6 +1,7 @@
 import React,{Component} from "react";
 import './assets/images/xyzxyz-logo.svg'
 import "./assets/images/1603724.jpg"
+import {Link} from "react-router-dom";
 
 class thirdPartyV extends Component{
 
@@ -63,9 +64,9 @@ class thirdPartyV extends Component{
                             <p className="mbr-text pb-3 mbr-fonts-style display-5">We provide services in areas of your
                                 interest thats why you exactly came here, but to proceeding any futher please select one
                                 of the method for kyc of your choice</p>
-                            <div className="mbr-section-btn"><a className="btn btn-md btn-primary display-4"
-                                                                href="#">Online via KeyBlock
-                                Servers</a>
+                            <div className="mbr-section-btn"><Link className="btn btn-md btn-primary display-4"
+                                                                to={"/Home"}>Online via KeyBlock
+                                Servers</Link>
                                 <a className="btn btn-md btn-white-outline display-4" href="#">Traditional
                                     KYC process</a></div>
                         </div>

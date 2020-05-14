@@ -25,13 +25,14 @@ class App extends Component {
         const network = await web3.eth.net.getNetworkType()
         console.log("network:", network)
         const accounts = await web3.eth.getAccounts()
-        console.log(accounts[0])
+        this.setState({Account:accounts[0]})
+        console.log("Accounts", accounts[0])
         this.setState({loading:false})
     }
     constructor(props) {
         super(props);
         this.state={
-            loading: true
+            Account:''
         }
     }
 
@@ -39,11 +40,12 @@ class App extends Component {
     return (
         <Router>
 
-                <Route path={"/"} exact  component={Page1}/>
+
+                <Route path={"/"} exact component={thirdPV} />
+                <Route path={"/Home"}   component={Page1}/>
                 <Route path={"/Verification"} component={VerificationPage}/>
                 <Route path={"/SignUp"} component={SignUp}/>
                 <Route path={"/Login"} component={LogiN}/>
-                <Route path={"/KYC"} component={thirdPV} />
                 <Route path={"/provider"} component={providers}/>
 
             </Router>
