@@ -1,7 +1,21 @@
 import React,{Component} from "react";
+import {Link} from "react-router-dom";
 
 
 class providerS extends Component{
+
+    constructor(props) {
+        super(props);
+        this.state={
+            boo:true
+        }
+
+        if(this.props.asSt=='0x758ae668a44cc04dc741f0e2543344f55042e19bf615cd03f2adadbafa3e24e2') {
+            this.state.boo = false
+            console.log(this.state.boo)
+        }
+    }
+
 
     render() {
         return(
@@ -28,25 +42,12 @@ class providerS extends Component{
                             </div>
                         </div>
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul className="navbar-nav nav-dropdown" data-app-modern-menu="true">
-                                <li className="nav-item">
-                                    <a className="nav-link link text-white display-7" href="#">
-                                        <span className="mbri-home mbr-iconfont mbr-iconfont-btn"/>
-                                        Services
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link link text-white display-7" href="#">
-                                        <span className="mbri-search mbr-iconfont mbr-iconfont-btn"/>
-                                        About Us
-                                    </a>
-                                </li>
-                            </ul>
+
                             <div className="navbar-buttons mbr-section-btn"><a
                                 className="btn btn-sm btn-success display-7" href="#"><span
                                 className="mbri-sites mbr-iconfont mbr-iconfont-btn"/>
-
-                                Try It Now!
+                                {console.log("HEY",this.props.asSt)}
+                                {this.state.boo?this.props.asSt:'Master Account'}
                             </a></div>
                         </div>
                     </nav>
@@ -65,6 +66,7 @@ class providerS extends Component{
                                 <p className="mbr-text align-center display-5 pb-3 mbr-fonts-style"><em>Following are
                                     the &nbsp;identity providers working with us. Choose one of the following ID
                                     providers through which you want to authenticate youself.</em></p>
+                                {!this.state.boo?
                                 <div className="mbr-section-btn align-center"><a
                                     className="btn btn-md btn-white-outline display-4"
                                     href="#">Bank</a> <a
@@ -73,7 +75,18 @@ class providerS extends Component{
                                     className="btn btn-md btn-white-outline display-4"
                                     href="#">ECI<br/></a> <a
                                     className="btn btn-md btn-white-outline display-4"
-                                    href="#">keySecure</a></div>
+                                    href="#">keySecure</a></div>:
+                                    <div className="mbr-section-btn align-center"><button
+                                        className="btn btn-md btn-white-outline display-4"
+                                        href="#" disabled>Bank</button> <button
+                                        className="btn btn-md btn-white-outline display-4"
+                                        href="#" disabled>UIDAI</button> <button
+                                        className="btn btn-md btn-white-outline display-4"
+                                        href="#" disabled>ECI<br/></button> <Link
+                                        className="btn btn-md btn-white-outline display-4"
+                                        to={''}>keySecure</Link></div>
+
+                                }
                             </div>
                         </div>
                     </div>

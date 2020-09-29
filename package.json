@@ -12,7 +12,8 @@
     "react-dom": "^16.13.1",
     "react-router": "^5.2.0",
     "react-scripts": "3.4.1",
-    "react-splash": "^0.1.0"
+    "react-splash": "^0.1.0",
+    "web3-eth-accounts": "^1.2.7"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,10 +1,48 @@
 import React,{Component} from "react";
+import {Link} from "react-router-dom";
 
 class logiN extends Component{
+
+
+    constructor(props) {
+        const lastLL = '';
+        super(props);
+        this.state={
+            boooL:true,
+            add:["0x6A588888c348F17148Cb2B4B61004397251F7695",
+                "0x90F7Ad7C22B4f9e2faf5cd8FfEF29dFcE1168FcF",
+                "0xa065e37c9Fcb35370e549D8ab3a60f7cF37923e9",
+                "0x6E6BAaefe8eC496e76B22a9cf163E738981c0f1C",
+                "0x2D8B1A002cd2817313F38F0A1ac23Fb0A61339D6",
+                "0x8D7ACf6963F8e48f31234289B75c4EA3B45da1Bd",
+                "0xc5E7D77925Dd4d7485a1b24c0f9F131672b8a977",
+                "0x636a427AF19E42FF0FB341f6ae53bfBc308EaB05",
+                "0xFcD4A4A13D33efe9749b79Ef68Ed2E1C6923A6A0",
+                "0x3073Abc5Ed58b75D9B9Ca6B22DC3AecbB75da38D"],
+            key:["d00aa08cf5f2d3216b7ea2c3020a7855ab84ed75451c23ed05ff3a8c0aa42996",
+                "f6c76a50c1031669fc56ddc245a77dab74dfb944d5727241b874d16eff132922",
+                "bd3acd5194c24a503cd810bbdf6a2b8aa841c6dcf807a94033ed3a795247f14a",
+                "223861927894b1ea12f720cf21af386d7c860e8451dbfceda50f42153d87f86d",
+                "ca6ba20fca727d54343ec908b0667bc747ea9fb871eb93af5c1006e86fa83cbb",
+                "54775783e0a1798c1cc1d5163695289c429792e137c24715cd655c711b078fd0",
+                "2b8a2b35ee58f649b53ab9d9b1cf1ddc7a376617649ff2cb8872a46ec5765a6c",
+                "72b12b46f9c9ae2ed432122b0eafa06d4e4bab57161d96533328ae164bdbdfd0",
+                "198b634082a9be3c9f5dab4a2d78d46c183e555b29473fd187ce96dea8ea1550",
+                "850e457d2c0457d0433dda6ad0eb8042a20ffa792b840d5796cd36655171026f"],
+            hash:['0x758ae668a44cc04dc741f0e2543344f55042e19bf615cd03f2adadbafa3e24e2',
+                '0xad13171b4e74d421a3c8fb2879fce51290d38fdb15dd41fd61262c4bf44ca7e5',
+                '0xb400744230e12278408a1ceb0723783cd9cbdc999928dbce3f5dcef86a8b7756',
+                '0x687c53a2dac2640d098ef709049b0bdd9cf5fef8e6e52bd83ce498cc36fa41f3'],
+            lastLL:''
+        }
+// this.setState({lastLL:lastLL})
+    }
+
+
     render() {
         return(
             <div>
-                <section className="menu cid-qTkzRZLJNu" once="menu" id="menu1-a">
+                <section className="menu cid-qTkzRZLJNu" nonce="menu" id="menu1-a">
 
 
                     <nav
@@ -64,34 +102,46 @@ class logiN extends Component{
                                 <h2 className="align-center pb-2 mbr-fonts-style display-2">LOGIN</h2>
                                 <h3 className="mbr-section-subtitle align-center pb-5 mbr-light mbr-fonts-style display-5">
                                     Please Provide the account hash provided to you during the account setup
-                                    process</h3>
+                                    process
+                                </h3>
+
                             </div>
                         </div>
 
                         <div className="row py-2 justify-content-center">
                             <div className="col-12 col-lg-6  col-md-8 " data-form-type="formoid">
 
-                                <form action="#" method="POST" className="mbr-form form-with-styler"
-                                      data-form-title="Mobirise Form"><input type="hidden" name="email"
-                                                                             data-form-email="true"
-                                                                             value="Q82AedgXcqK740CdFFNgH4vT1cwZjzg/c3nePAWfyqf0a1Vnl9IevzDwRPXb8riOFiDfevXyp5HBJADGYKHnmW8UvfOv97yx1dis9KwL1tOtC0h805H5eddcYBCo1t+8"/>
+                                <form action="#" className="mbr-form form-with-styler"
+                                     onSubmit={(e=>{
+
+                                         e.preventDefault()
+                                         this.state.lastLL=this.email.value
+                                         this.props.asS(this.state.lastLL)
+                                       //  this.setState({lastLL:this.email.value})
+                                            console.log(this.props.asSt)
+                                         // if(this.props.keyHashtoUserHashMapping)
+
+                                     })}
+                                      ><input type="hidden" name="HashVal"/>
                                     <div className="row">
-                                        <div hidden="hidden" data-form-alert=""
-                                             className="alert alert-success col-12">Conditional
-                                        </div>
-                                        <div hidden="hidden" data-form-alert-danger=""
-                                             className="alert alert-danger col-12">
-                                        </div>
+
                                     </div>
                                     <div className="dragArea row">
                                         <div className="form-group col" data-for="email">
-                                            <input type="email" name="email"
+                                            <input type="name" name="email"
+                                                   ref={(input)=>{
+                                                        this.email=input;
+                                                   }}
                                                    placeholder="Hash. . . . . . . . . . . . . "
-                                                   data-form-field="Email" required="required"
+                                                   required="required"
                                                    className="form-control display-7" id="email-form3-c"/>
                                         </div>
                                         <div className="col-auto input-group-btn">
-                                            <button type="submit" className="btn  btn-success display-4">SUBMIT</button>
+                                            {}
+                                            <Link to={'/provider'} type="submit" onClick={(e=>{
+                                                console.log("Link")
+                                                // console.log(this.props.asSt)
+                                            })} className="btn  btn-success display-4">SUBMIT</Link>
                                         </div>
                                     </div>
                                 </form>

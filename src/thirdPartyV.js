@@ -3,6 +3,10 @@ import './assets/images/xyzxyz-logo.svg'
 import "./assets/images/1603724.jpg"
 import {Link} from "react-router-dom";
 
+require('react-dom');
+window.React2 = require('react');
+console.log(window.React1 === window.React2);
+
 class thirdPartyV extends Component{
 
     render() {
@@ -73,7 +77,7 @@ class thirdPartyV extends Component{
                     </div>
                 </section>
 
-                <section once="footers" className="cid-rYRoMRkjaN" id="footer6-i">
+                <section nonce="footers" className="cid-rYRoMRkjaN" id="footer6-i">
 
 
                     <div className="container">
