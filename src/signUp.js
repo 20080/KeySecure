@@ -31,7 +31,10 @@ class signUp extends Component{
             hash:['0x758ae668a44cc04dc741f0e2543344f55042e19bf615cd03f2adadbafa3e24e2',
                 '0xad13171b4e74d421a3c8fb2879fce51290d38fdb15dd41fd61262c4bf44ca7e5',
                 '0xb400744230e12278408a1ceb0723783cd9cbdc999928dbce3f5dcef86a8b7756',
-                '0x687c53a2dac2640d098ef709049b0bdd9cf5fef8e6e52bd83ce498cc36fa41f3']
+                '0x687c53a2dac2640d098ef709049b0bdd9cf5fef8e6e52bd83ce498cc36fa41f3',
+                '0x16f19b9dfeddb690f7ef353e60813258583c344572eeb591d4a420a8e9c1175d',
+                '0xbfc35268bc9e759c7d9dd5550c80aea6fc1cb5aa32b6d9fc24e237a6f23125f7',
+                '0x5a89ec09aca17fcb00c8854aff57d8a96eae4f862139213d0935f841d0981700']
         }
 
 

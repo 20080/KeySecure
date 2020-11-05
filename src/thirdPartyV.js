@@ -69,7 +69,7 @@ class thirdPartyV extends Component{
                                 interest thats why you exactly came here, but to proceeding any futher please select one
                                 of the method for kyc of your choice</p>
                             <div className="mbr-section-btn"><Link className="btn btn-md btn-primary display-4"
-                                                                to={"/Home"}>Online via KeyBlock
+                                to={"/Home"}>Online via KeyBlock
                                 Servers</Link>
                                 <a className="btn btn-md btn-white-outline display-4" href="#">Traditional
                                     KYC process</a></div>

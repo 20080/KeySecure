@@ -7,6 +7,11 @@ import "./assets/images/1603724.jpg"
 
 class finalVerification extends Component{
 
+
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         return(
 
@@ -60,6 +65,11 @@ class finalVerification extends Component{
                     <h3 className="mbr-section-subtitle pb-5 align-center mbr-fonts-style display-6">
                         verification completed. use your secret hash for further communication.
                     </h3>
+                    <h2>{this.props.keyHashtoUserHash}</h2>
+                    <h1>{this.props.userArr.name}</h1>
+                    <h1>{this.props.userArr.email}</h1>
+                    <h1>{this.props.userArr.phone}</h1>
+                    <h1>{this.props.userArr.additionalDetails}</h1>
 
                 </div>
 

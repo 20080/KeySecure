@@ -10,7 +10,7 @@ class providerS extends Component{
             boo:true
         }
 
-        if(this.props.asSt=='0x758ae668a44cc04dc741f0e2543344f55042e19bf615cd03f2adadbafa3e24e2') {
+        if(this.props.asSt==='0x758ae668a44cc04dc741f0e2543344f55042e19bf615cd03f2adadbafa3e24e2') {
             this.state.boo = false
             console.log(this.state.boo)
         }
@@ -69,13 +69,13 @@ class providerS extends Component{
                                 {!this.state.boo?
                                 <div className="mbr-section-btn align-center"><a
                                     className="btn btn-md btn-white-outline display-4"
-                                    href="#">Bank</a> <a
+                                    to={'/verified'}>Bank</a> <a
                                     className="btn btn-md btn-white-outline display-4"
-                                    href="#">UIDAI</a> <a
+                                    to={'/verified'}>UIDAI</a> <a
                                     className="btn btn-md btn-white-outline display-4"
-                                    href="#">ECI<br/></a> <a
+                                    to={'/verified'}>ECI<br/></a> <a
                                     className="btn btn-md btn-white-outline display-4"
-                                    href="#">keySecure</a></div>:
+                                    to={'/verified'}>keySecure</a></div>:
                                     <div className="mbr-section-btn align-center"><button
                                         className="btn btn-md btn-white-outline display-4"
                                         href="#" disabled>Bank</button> <button
@@ -84,7 +84,7 @@ class providerS extends Component{
                                         className="btn btn-md btn-white-outline display-4"
                                         href="#" disabled>ECI<br/></button> <Link
                                         className="btn btn-md btn-white-outline display-4"
-                                        to={''}>keySecure</Link></div>
+                                        to={'/verified'}>keySecure</Link></div>
 
                                 }
                             </div>

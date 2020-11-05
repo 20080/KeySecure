@@ -7,6 +7,7 @@ import './css/bootstrap-grid.min.css'
 import './css/bootstrap-reboot.min.css'
 import './images/background4.jpg'
 import VerificationPage from "./verificationPage";
+import Final from "./finalVerification";
 import SignUp from "./signUp"
 import LogiN from "./logiN"
 import thirdPV from "./thirdPartyV"
@@ -45,12 +46,16 @@ class App extends Component {
 
         this.asSt = '0x0000000000000000000000000000000000000000000000000000000000000000'
         this.setState({asSt: asSt})
-        const keyHashtoUserHash = await Txn.methods.keyHashtoUserHash(this.asSt).call()
+        const keyHashtoUserHash = await Txn.methods.keyHashtoUserHash(asSt).call()
         this.setState({keyHashtoUserHash});
         {
             console.log(asSt)
         }
 //        console.log(.asSt)
+        const userList = await Txn.methods.userList(keyHashtoUserHash).call()
+        this.setState({userList})
+        console.log(userList)
+
 
     }
 
@@ -65,7 +70,8 @@ class App extends Component {
             con:true,
             lastLog:"",
             keyHashtoUserHash:"",
-            asSt:''
+            asSt:'',
+            userList:[]
         }
         console.log("LLLL",this.props.lastLL)
 
@@ -115,6 +121,10 @@ class App extends Component {
                 <Route path={"/"} exact component={thirdPV} />
                 <Route path={"/Home"} exact  component={Page1}/>
                 <Route path={"/Verification"} exact component={VerificationPage}/>
+
+
+                <Route path={"/verified"} component={()=><Final keyHashtoUserHash={this.state.keyHashtoUserHash}
+                    userArr={this.state.userList}/>}/>
 
                 <Route path={"/SignUp"} component={()=><SignUp createUser={this.createUser} uc={this.state.uc}
             keyHashtoUserHashMapping={this.keyHashtoUserHashMapping} lastLog={this.state.lastLog}
